@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
   end}
 	
   use 'turbio/bracey.vim'
-
+  use {'nvim-tree/nvim-web-devicons'}
  -- NvimTree
   use {
   'nvim-tree/nvim-tree.lua',

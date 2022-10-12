@@ -30,32 +30,34 @@ require('nvim-tree').setup({
 	renderer = {
 		highlight_git = true,
 		highlight_opened_files = "none",
-	},
 	-- indent_markers = {
 		-- enable = true,
 	-- },
 
-	-- icons = {
-	-- 	show = {
-	-- 		file = true,
-	-- 		folder = true,
-	-- 		folder_arrow = true,
-	-- 		git = true,
-	-- 		},
-	--
-	-- 	git = {
-	-- 		modified  = "✹",
-	-- 		staged    = "✚",
-	-- 		untracked = "✭",
-	-- 		renamed   = "➜",
-	-- 		unmerged  = "═",
-	-- 		deleted   = "",
-	-- 		dirty     = "✗",
-	-- 		clean     = "✔︎",
-	-- 		ignored   = "☒",
-	-- 		unknown   = "?",
-	-- 	},
-	-- },
+	icons = {
+		show = {
+			file = true,
+			folder = true,
+			folder_arrow = true,
+			git = true,
+			},
+
+		-- glyphs = {
+		-- 	git = {
+		-- 		modified  = "✹",
+		-- 		staged    = "✚",
+		-- 		untracked = "✭",
+		-- 		renamed   = "➜",
+		-- 		unmerged  = "═",
+		-- 		deleted   = "",
+		-- 		dirty     = "✗",
+		-- 		clean     = "✔︎",
+		-- 		ignored   = "☒",
+		-- 		unknown   = "?",
+		-- 	},
+		-- },
+		},
+	},
 })
 
 vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
