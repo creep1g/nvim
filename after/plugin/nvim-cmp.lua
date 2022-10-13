@@ -71,7 +71,7 @@
 	  }
   end
 
-  require('lspconfig')['csharp-ls'].setup{
+  require('lspconfig')['csharp_ls'].setup{
 	  cmd = {"/home/gilli/.dotnet/csharp-ls"},
 	  capabilites = capabilites
   }
