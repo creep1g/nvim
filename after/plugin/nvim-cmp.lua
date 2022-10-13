@@ -63,7 +63,7 @@
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  local servers = { 'pyright', 'clangd', 'sumneko_lua', 'gopls', 'c_sharp' }
+  local servers = { 'pyright', 'clangd', 'sumneko_lua', 'gopls' }
 
   for _, lsp in ipairs(servers) do
 	  require('lspconfig')[lsp].setup {
@@ -71,7 +71,7 @@
 	  }
   end
 
-  require('lspconfig')['c_sharp'].setup{
+  require('lspconfig')['csharp-ls'].setup{
 	  cmd = {"/home/gilli/.dotnet/csharp-ls"},
 	  capabilites = capabilites
   }
