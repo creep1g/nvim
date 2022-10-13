@@ -117,13 +117,23 @@ return require('packer').startup(function(use)
 
   --Lualine
   --
-  use { 
+  use {
 	'nvim-lualine/lualine.nvim',
 	requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  -- Git Gutter
-  use 'airblade/vim-gitgutter'
+  -- Notify
+  use {
+	"rcarriga/nvim-notify",
+    config = function()
+           vim.notify = require "notify"
+    end
+    }
+  -- Gitsign
+  use {
+  'lewis6991/gitsigns.nvim',
+  -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+}
 end)
 
 

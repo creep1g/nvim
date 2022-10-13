@@ -49,9 +49,9 @@ o.smarttab = true
 o.autoindent = true
 o.cursorline = true
 o.showmatch = true
-o.nobackup = true
-o.nowritebackup = true
-o.noswapfile = true
+o.backup = false
+o.writebackup = false
+o.swapfile = false
 o.scrolloff = 20
 o.clipboard = 'unnamed'
 

@@ -1,5 +1,5 @@
 require("dapui").setup({
-  icons = { expanded = "\u25be", collapsed = "\u25b8", current_frame = "\u25b8" },
+  icons = { expanded = "▾", collapsed = "▸", current_frame = "▸" },
   mappings = {
     -- Use a table to apply multiple mappings
     expand = { "<CR>", "<2-LeftMouse>" },
@@ -46,14 +46,14 @@ require("dapui").setup({
     -- Display controls in this element
     element = "repl",
     icons = {
-      pause = "\uf04c",
-      play = "\uf04b",
-      step_into = "\uf6ba",
-      step_over = "\uf6bc",
-      step_out = "\uf6bb",
-      step_back = "\uf048",
-      run_last = "\u21bb",
-      terminate = "\u25a1",
+      pause = "",
+      play = "",
+      step_into = "",
+      step_over = "",
+      step_out = "",
+      step_back = "",
+      run_last = "↻",
+      terminate = "□",
     },
   },
   floating = {
@@ -70,3 +70,14 @@ require("dapui").setup({
     max_value_lines = 100, -- Can be integer or nil.
   }
 })
+
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
