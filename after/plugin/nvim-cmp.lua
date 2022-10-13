@@ -71,8 +71,12 @@
 	  }
   end
 
+  require('lspconfig')['c_sharp'].setup{
+	  cmd = {"/home/gilli/.dotnet/csharp-ls"},
+	  capabilites = capabilites
+  }
   require('lspconfig')['omnisharp'].setup{
-	    cmd = { "dotnet", "/usr/bin/omnisharp" },
+	    cmd = { "dotnet", "/lib/omnisharp-roslyn/OmniSharp.dll" },
 
 		-- Enables support for reading code style, naming convention and analyzer
 		-- settings from .editorconfig.
