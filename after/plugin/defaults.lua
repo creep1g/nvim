@@ -55,6 +55,11 @@ o.swapfile = false
 o.scrolloff = 20
 o.clipboard = 'unnamed'
 
+--  jump to end of line in insert mode
+
+api.nvim_set_keymap('i', '<C-a>', '<C-o>$<C-a>;<Esc>r<Esc>', { noremap = true })
+api.nvim_set_keymap('n', '<C-a>', '$a;<Esc>r<Esc>', { noremap = true })
+
 vim.api.nvim_create_autocmd('User', {
   pattern = 'LspAttached',
   desc = 'LSP actions',

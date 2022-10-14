@@ -134,10 +134,10 @@ return require('packer').startup(function(use)
   'lewis6991/gitsigns.nvim',
    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
  }
-  use({
+  use {
    'weilbith/nvim-code-action-menu',
    cmd = 'CodeActionMenu',
- })
+ }
 end)
 
 
