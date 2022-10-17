@@ -33,7 +33,7 @@ g.loaded_netrwPlugin = 1
 o.nocompatible = true
 g.filetype = true
 g.filetype_plugin_indent = true
-g.syntax = on
+g.syntax = true
 
 o.ignorecase = true
 o.nocp = true
@@ -57,7 +57,7 @@ o.clipboard = 'unnamed'
 
 --  jump to end of line in insert mode
 
-api.nvim_set_keymap('i', '<C-a>', '<C-o>$<C-a>;<Esc>r<Esc>', { noremap = true })
+api.nvim_set_keymap('i', '<C-a>', '<C-o>$', { noremap = true })
 api.nvim_set_keymap('n', '<C-a>', '$a;<Esc>r<Esc>', { noremap = true })
 
 vim.api.nvim_create_autocmd('User', {
