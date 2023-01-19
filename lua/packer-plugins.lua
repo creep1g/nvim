@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
       require('pretty-fold').setup()
    end
 }
+  use{'manzeloth/live-server'}
  
  -- Auto pair
    use { 'windwp/nvim-autopairs',
@@ -75,7 +76,14 @@ return require('packer').startup(function(use)
 		require('nvim_comment').setup()
 	end
  }
+ -- GO
+  use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
 
+ use {'ray-x/go.nvim',
+	conifg = function()
+		require('go').setup()
+	end
+ }
  -- Language server
  use {
     "williamboman/nvim-lsp-installer",

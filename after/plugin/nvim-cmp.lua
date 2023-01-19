@@ -71,6 +71,11 @@
 	  }
   end
 
+  require('lspconfig')['gopls'].setup{
+  	cmd={'gopls'},
+	filetypes={'go', 'gomod'},
+  }
+
   require('lspconfig')['csharp_ls'].setup{
 	  cmd = {"/home/gilli/.dotnet/tools/csharp-ls"},
 	  capabilites = capabilites
