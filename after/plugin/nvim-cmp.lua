@@ -71,9 +71,17 @@
 	  }
   end
 
+<<<<<<< HEAD
   require('lspconfig')['gopls'].setup{
   	cmd={'gopls'},
 	filetypes={'go', 'gomod'},
+=======
+  require('lspconfig')['cssls'].setup{
+	  cmd = {"vscode-css-language-server", "--stdio"},
+	  filetypes = {"css", "scss", "less"},
+
+	  capabilities = capabilities,
+>>>>>>> 54aba9c (checking)
   }
 
   require('lspconfig')['csharp_ls'].setup{
@@ -81,7 +89,7 @@
 	  capabilites = capabilites
   }
   require('lspconfig')['omnisharp'].setup{
-	    cmd = { "dotnet", "/lib/omnisharp-roslyn/OmniSharp.dll" },
+	    cmd = { "dotnet", "/lib/omnisharp-roslyn/OmniSharp.dll", "--languageserver", "--hostPid", tostring(pid) },
 
 		-- Enables support for reading code style, naming convention and analyzer
 		-- settings from .editorconfig.
@@ -121,3 +129,4 @@
 		capabilities = capabilities
   }
 
+  vim.g.OmniSharp_server_use_net6 = 1

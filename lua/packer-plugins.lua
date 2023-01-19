@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
 
+  -- lspkind
+  use 'onsails/lspkind.nvim'
+
   -- colorscheme
   use {'AlphaTechnolog/pywal.nvim', as = 'pywal'}
 	
@@ -45,6 +48,12 @@ return require('packer').startup(function(use)
 }
   use{'manzeloth/live-server'}
  
+ -- Colors Hightlight
+  use {'norcalli/nvim-colorizer.lua',
+   config = function()
+		require('colorizer').setup()
+	end
+  }
  -- Auto pair
    use { 'windwp/nvim-autopairs',
    config = function()
