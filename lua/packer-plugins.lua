@@ -20,6 +20,8 @@ return require('packer').startup(function(use)
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
 
+  -- NIO	
+  use 'nvim-neotest/nvim-nio'
   -- lspkind
   use 'onsails/lspkind.nvim'
 
@@ -46,9 +48,15 @@ return require('packer').startup(function(use)
       require('pretty-fold').setup()
    end
 }
-  use{'manzeloth/live-server'}
- 
- -- Colors Hightlight
+--  use{'manzeloth/live-server'}
+  use{'barrett-ruth/live-server.nvim'}
+  --,
+    --    build = 'pnpm add -g live-server',
+      --  cmd = {'LiveServerStart', 'LiveServerStop'}
+        --config = true
+      --}
+
+  -- Colors Hightlight
   use {'norcalli/nvim-colorizer.lua',
    config = function()
 		require('colorizer').setup()
@@ -78,7 +86,8 @@ return require('packer').startup(function(use)
     require"startup".setup { theme = "dashboard" }
   end
 }
-
+-- autotag
+ use {'windwp/nvim-ts-autotag'}
  -- Vim comentary 
  use {'terrortylor/nvim-comment',
 	config = function()
@@ -125,7 +134,7 @@ return require('packer').startup(function(use)
   use 'yuttie/comfortable-motion.vim'
 
   -- rainbow paranthesese
-  use 'p00f/nvim-ts-rainbow'
+  use {'HiPhish/nvim-ts-rainbow2'}
 
   use 'junegunn/fzf'
 

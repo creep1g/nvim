@@ -63,7 +63,7 @@
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  local servers = { 'pyright', 'clangd', 'sumneko_lua', 'gopls' }
+  local servers = { 'pyright', 'clangd', 'lua_ls', 'gopls' }
 
   for _, lsp in ipairs(servers) do
 	  require('lspconfig')[lsp].setup {
@@ -71,17 +71,64 @@
 	  }
   end
 
-<<<<<<< HEAD
   require('lspconfig')['gopls'].setup{
   	cmd={'gopls'},
 	filetypes={'go', 'gomod'},
-=======
+	}
+  
+ require('lspconfig')['eslint'].setup{
+	cmd = { "vscode-eslint-language-server", "--stdio" },
+	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue", "svelte", "astro" },
+-- 	handlers = {
+--   ["eslint/confirmESLintExecution"] = <function 1>,
+--   ["eslint/noLibrary"] = <function 2>,
+--   ["eslint/openDoc"] = <function 3>,
+--   ["eslint/probeFailed"] = <function 4>
+-- }
+    settings ={
+  codeAction = {
+    disableRuleComment = {
+      enable = true,
+      location = "separateLine"
+    },
+    showDocumentation = {
+      enable = true
+    }
+  },
+  codeActionOnSave = {
+    enable = false,
+    mode = "all"
+  },
+  experimental = {
+    useFlatConfig = false
+  },
+  format = true,
+  nodePath = "",
+  onIgnoredFiles = "off",
+  packageManager = "npm",
+  problems = {
+    shortenToSingleLine = false
+  },
+  quiet = false,
+  rulesCustomizations = {},
+  run = "onType",
+  useESLintClass = false,
+  validate = "on",
+  workingDirectory = {
+    mode = "location"
+  }
+},
+  	on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+ }
   require('lspconfig')['cssls'].setup{
 	  cmd = {"vscode-css-language-server", "--stdio"},
 	  filetypes = {"css", "scss", "less"},
-
 	  capabilities = capabilities,
->>>>>>> 54aba9c (checking)
   }
 
   require('lspconfig')['csharp_ls'].setup{

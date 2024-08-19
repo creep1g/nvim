@@ -30,13 +30,13 @@ api.nvim_set_keymap('n', '<C-L>', '<C-W><C-L>', { noremap = true })
 api.nvim_set_keymap('n', '<C-H>', '<C-W><C-H>', { noremap = true })
 g.loaded = 1
 g.loaded_netrwPlugin = 1
-o.nocompatible = true
+--o.nocompatible = true
 g.filetype = true
 g.filetype_plugin_indent = true
 g.syntax = true
 
 o.ignorecase = true
-o.nocp = true
+-- o.nocp = true
 --o.backspace= {'indent,eol,start'}
 o.relativenumber = true
 o.number = true
